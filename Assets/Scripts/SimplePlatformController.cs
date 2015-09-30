@@ -17,15 +17,20 @@ public class SimplePlatformController : MonoBehaviour {
 	private Animator anim;
 	private Rigidbody2D rb2d;
 
+    CircleCollider2D ccol2d;
+    BoxCollider2D bcol2d;
 
 
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake () {
 		transform.position = spawn.position;
 		anim = GetComponent<Animator> ();
 		rb2d = GetComponent<Rigidbody2D> ();
 		rb2d.isKinematic = true;
+
+        ccol2d = GetComponent<CircleCollider2D>();
+        bcol2d = GetComponent<BoxCollider2D>();
 		//rb2d.isKinematic = false;
 	}
 	
@@ -33,7 +38,8 @@ public class SimplePlatformController : MonoBehaviour {
 	void Update () {
 		rb2d.isKinematic = false; // crappy hack to prevent jumping
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-		if (Input.GetButtonDown ("Jump") && grounded) {
+        Debug.Log(grounded);
+        if (Input.GetButtonDown ("Jump") && grounded) {
 			jump = true;
 		} else if (!grounded) { // animate when falling
 			anim.SetTrigger ("Jump"); 
@@ -44,28 +50,19 @@ public class SimplePlatformController : MonoBehaviour {
 			rb2d.velocity = Vector2.zero;
 			transform.position = spawn.position;
 		}
-        //Debug.Log(rb2d.velocity.y);
 
-        if (rb2d.velocity.y > 0) {
-			Debug.Log (rb2d.velocity.y);
-			Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("Player"), 
-			                               LayerMask.NameToLayer ("Ground"),
-			                               true);
-		}
-		if (rb2d.velocity.y <= 0) {
-			Debug.Log (rb2d.velocity.y);
-			Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("Player"), 
-			                                LayerMask.NameToLayer ("Ground"),
-			                                false);
-		}
-		/* else if (rb2d.velocity.y > 0 && !grounded) {
-			Debug.Log (rb2d.velocity.y);
-			Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("Player"), 
-			                               LayerMask.NameToLayer ("Ground"),
-			                               true);
-		}*/
+        if (!grounded && rb2d.velocity.y > 0){
+            ccol2d.enabled = false;
+            bcol2d.enabled = false;
+            //			boxCollider2D.enabled = false;
+        }
+        else{
+            ccol2d.enabled = true;
+            bcol2d.enabled = true;
+            //			boxCollider2D.enabled = true;
+        }
 
-	}
+    }
 
 
 	void Flip(){

@@ -210,14 +210,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 443278, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5.74083042
-      objectReference: {fileID: 0}
-    - target: {fileID: 443278, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .171103492
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
   m_IsPrefabParent: 0
@@ -324,7 +316,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &418761233
 MonoBehaviour:
@@ -342,7 +334,7 @@ MonoBehaviour:
   moveForce: 365
   maxSpeed: 5
   jumpForce: 1000
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 455565290}
   spawn: {fileID: 1125562638}
 --- !u!1 &455565289
 GameObject:
@@ -426,6 +418,60 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: e7d3a1e0e2fac4bd48b6734c2daf4fe1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &818966450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 818966452}
+  - 212: {fileID: 818966451}
+  m_Layer: 0
+  m_Name: colorful-triangles-background_yB0qTG6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &818966451
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818966450}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 2be61a62783430d438a8e7c924b644b3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &818966452
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818966450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.100000001, y: 0, z: 0}
+  m_LocalScale: {x: .485867441, y: .384973496, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &842367721
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +932,18 @@ Prefab:
       propertyPath: m_Name
       value: Ground (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6847798, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847798, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 5f17e93ea0f03674cab724ebc1a9af63, type: 2}
+    - target: {fileID: 6847798, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
   m_IsPrefabParent: 0
@@ -1050,6 +1108,18 @@ Prefab:
       propertyPath: m_Name
       value: Ground (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6847798, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847798, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847798, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: e9a982c78b9faad4a91c76c04ed87d7c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee0a5f79318e90f40a7a50b4c8f0bfe5, type: 2}
   m_IsPrefabParent: 0
@@ -1063,7 +1133,6 @@ GameObject:
   - 4: {fileID: 1956786026}
   - 212: {fileID: 1956786028}
   - 82: {fileID: 1956786027}
-  - 114: {fileID: 1956786029}
   - 50: {fileID: 1956786031}
   - 95: {fileID: 1956786030}
   m_Layer: 9
@@ -1183,24 +1252,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: e7d3a1e0e2fac4bd48b6734c2daf4fe1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &1956786029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956786025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f5f4094898553548a73850e8c455a25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facingRight: 1
-  jump: 1
-  moveForce: 365
-  maxSpeed: 5
-  jumpForce: 1000
-  groundCheck: {fileID: 0}
-  spawn: {fileID: 1125562638}
 --- !u!95 &1956786030
 Animator:
   serializedVersion: 3
