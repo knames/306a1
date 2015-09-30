@@ -10,6 +10,7 @@ public class SimplePlatformController : MonoBehaviour {
 	public float maxSpeed = 5f;
 	public float jumpForce = 1000f;
 	public Transform groundCheck;
+    float groundRadius = 0.2f;
 	public Transform spawn;
 
 	private bool grounded = false;
@@ -43,14 +44,15 @@ public class SimplePlatformController : MonoBehaviour {
 			rb2d.velocity = Vector2.zero;
 			transform.position = spawn.position;
 		}
+        //Debug.Log(rb2d.velocity.y);
 
-		if (rb2d.velocity.y > 0) {
+        if (rb2d.velocity.y > 0) {
 			Debug.Log (rb2d.velocity.y);
 			Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("Player"), 
 			                               LayerMask.NameToLayer ("Ground"),
 			                               true);
 		}
-		if (rb2d.velocity.y < 0) {
+		if (rb2d.velocity.y <= 0) {
 			Debug.Log (rb2d.velocity.y);
 			Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("Player"), 
 			                                LayerMask.NameToLayer ("Ground"),
