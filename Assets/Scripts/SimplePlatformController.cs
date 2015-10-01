@@ -38,7 +38,7 @@ public class SimplePlatformController : MonoBehaviour {
 	void Update () {
 		rb2d.isKinematic = false; // crappy hack to prevent jumping
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-        Debug.Log(grounded);
+        //Debug.Log(grounded);
         if (Input.GetButtonDown ("Jump") && grounded) {
 			jump = true;
 		} else if (!grounded) { // animate when falling
